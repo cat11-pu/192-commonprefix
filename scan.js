@@ -1,4 +1,5 @@
-// scan.js：比一字符（基线：一律算不同）
+// scan.js：比一字符（越界算不同）
 export function sameAt(left, right, spot) {
-  return false;
+  if (spot < 0 || spot >= left.length || spot >= right.length) return false;
+  return left[spot] === right[spot];
 }
